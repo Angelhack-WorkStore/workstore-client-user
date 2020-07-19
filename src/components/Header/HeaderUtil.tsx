@@ -1,7 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { BsSearch } from "react-icons/bs";
+import {useSelector} from 'react-redux';
 import mainLogo from '../../lib/mainLogo.png';
+import Avatar from '@material-ui/core/Avatar';
+import {RootState} from '../../store/modules';
 import {Link} from 'react-router-dom';
 
 const UtilContainer = styled.div`
@@ -41,6 +44,13 @@ const UtilContainer = styled.div`
 const UtilRightBox = styled.div`
   display:flex;
   align-items:center;
+  .profile_box {
+    display:flex;
+    align-items:center;
+    span {
+      margin-left:3px;
+    }
+  }
   .icon {
     font-size:20px;
     cursor:pointer;
@@ -61,6 +71,9 @@ const UtilRightBox = styled.div`
   }
 `
 const HeaderUtil = () => {
+
+  const {name, imageUrl} = useSelector((state:RootState) => state.authentication);
+
   return (
     <UtilContainer>
       <div className="logo_box">
@@ -77,10 +90,15 @@ const HeaderUtil = () => {
           </a>
         </div>
         <span className="vertical_line"></span>
-        <div>
-          <Link to="/auth/login"><span className="auth_text">로그인</span></Link>
-          <Link to="/auth/signup"><span className="auth_text">회원가입</span></Link>
-        </div>
+        {
+          name ?
+           <div className="profile_box"><Avatar src={imageUrl}></Avatar> <span>{name}</span></div>
+          :
+          <div>
+            <Link to="/auth/login"><span className="auth_text">로그인</span></Link>
+            <Link to="/auth/signup"><span className="auth_text">회원가입</span></Link>
+          </div>
+        }
       </UtilRightBox>
     </UtilContainer>
 

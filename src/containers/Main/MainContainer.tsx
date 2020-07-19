@@ -15,7 +15,7 @@ const MiddleContainer = styled.div`
   padding-top:130px;
   text-align:center;
   margin:0 auto;
-  text {
+  span {
     color:${({theme}) => theme.accentColor};
   }
   h2 {
@@ -124,9 +124,9 @@ const MainContainer = () => {
       <Banner/>
       <SearchBlock/>
       <MiddleContainer>
-        <h2>업무 공간을<br/> <text>하루종일 마음껏</text> 이용하세요.</h2>
+        <h2>업무 공간을<br/> <span>하루종일 마음껏</span> 이용하세요.</h2>
         <p>
-          워크스토어는 <text>점포가 운영 되지 않는 시간에 공간을 공유</text>합니다.<br/>
+          워크스토어는 <span>점포가 운영 되지 않는 시간에 공간을 공유</span>합니다.<br/>
           사무 업무 이용자만 예약하여 업무에 집중할 수 있습니다.<br/>
           가까운 워크스토어에서 공간을 예약해보세요.
         </p>
@@ -134,7 +134,7 @@ const MainContainer = () => {
         <h2 className="header_two">워크스토어의 좋은점</h2>
         <ContentRow>
           <div className="content_left">
-            <h4><text>저렴한</text> 가격!</h4>
+            <h4><span>저렴한</span> 가격!</h4>
             <p>
               점포 미운영 시간에 유휴 공간을 사용할 수 있어<br/>
               다른 코워킹스페이스보다 저렴한 가격으로<br/>
@@ -147,7 +147,7 @@ const MainContainer = () => {
         </ContentRow>
         <ContentRow className="middle_row">
           <div className="content_right">
-            <h4><text>제휴 공간별 즐거운</text> 혜택!</h4>
+            <h4><span>제휴 공간별 즐거운</span> 혜택!</h4>
             <p>
               워크스토어에 등록된 모든 점포에서<br/>
              음료 할인, 사이드 메뉴 제공 등 다양한 혜택과 할인으로<br/>
@@ -160,7 +160,7 @@ const MainContainer = () => {
         </ContentRow>
         <ContentRow>
           <div className="content_left">
-            <h4><text>간편한</text> 이용절차</h4>
+            <h4><span>간편한</span> 이용절차</h4>
             <p>
               나에게 맞는 공간을 예약 후 점포 이용시,<br/>
               QR코드 확인을 통해 출입을 확인하여<br/> 

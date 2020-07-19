@@ -4,9 +4,11 @@ import ReservationContainer from '../containers/Reservation/ReservationContainer
 
 const ReservationPage = () => {
   return (
+    <>
     <ResetvationTemeplate>
       <ReservationContainer/>
     </ResetvationTemeplate>
+    </>
   )
 }
 

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Header from '../../components/StoreModal/Header';
 import styled,{css} from 'styled-components';
-import {useLocation, useHistory} from 'react-router-dom';
+import {useLocation, useHistory, Link} from 'react-router-dom';
 import DatePickers from '../../components/StoreModal/DatePickers';
 import {PrimaryButton} from '../../components/Common/CustomButton';
 import {putDate} from '../../store/modules/reservation';
@@ -101,7 +101,7 @@ const StoreMocalContainer = () => {
   }
   const handleButtonClick = () => {
     dispatch(putDate(date,personnel))
-    history.push(`/reservation/${data.id}`)
+    history.push(`/reservation/${data.id}?personnel=${personnel}&date=${date}`)
   }
   return (
     <ModalContainer>
@@ -147,8 +147,8 @@ const StoreMocalContainer = () => {
           <hr className="line"/>
           <h4>유의 사항</h4>
           <div className="caution_box">
-            {data.cautionNotes.map((caution:any) => {
-              return (<p key={caution.caution} className="caution">{caution.caution}</p>)
+            {data.cautionNotes.map((caution:any,index:number) => {
+              return (<p key={caution.caution} className="caution">{index+1}.&nbsp;{caution.caution}</p>)
             })}
           </div>
           <hr className="line"/>
@@ -234,7 +234,8 @@ const ContentContainer = styled.div`
   .body_content {
     margin-top:12px;
     margin-bottom:77px;
-    line-height: 22px;
+    line-height: 26px;
+    work-break:keep-all;
     font-size:15px;
   }
   hr {
@@ -248,6 +249,7 @@ const ContentContainer = styled.div`
   }
   .tag_container {
     display:flex;
+    flex-wrap: wrap;
     .tag_box {
       padding:14px 16px;
       background:${({theme}) => theme.strokeColor};

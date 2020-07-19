@@ -5,6 +5,12 @@ import {Link,useLocation} from 'react-router-dom';
 const ProductContainer = styled.div`
   text-align:left;
   margin-top:60px;
+  border:1px solid ${({theme}) => theme.strokeColor};
+  border-radius:8px;
+  .margin {
+    padding-left:20px;
+    padding-bottom:10px;
+  }
   img {
     width: 387px;
     height:289px;
@@ -23,7 +29,7 @@ const ProductContainer = styled.div`
   span {
     color:18px;
     font-weight:bold;
-    text {
+    p {
       font-size:13px;
       margin-left:4px;
       color:${({theme}) => theme.grayColor7};
@@ -36,8 +42,7 @@ const ProductContainer = styled.div`
   }
 `
 
-const images = ['/images/mainProduct1.png','/images/mainProduct2.png','/images/mainProduct3.png',
-'/images/mainProduct1.png','/images/mainProduct1.png','/images/mainProduct1.png','/images/mainProduct1.png']
+const images = ['/images/mainpi.png','/images/thumbnail1.png','/images/thumbnail2.png']
 
 const Product = ({data,index}:any) => {
 
@@ -47,11 +52,15 @@ const Product = ({data,index}:any) => {
 
   return (
     <ProductContainer>
-      <Link to={{pathname:`/store/${data.id}`, state:{background:location, data}}}><img src={images[index]} alt=""/></Link>
+      <Link to={{pathname:`/store/${data.id}`, state:{background:location, data}}}>
+        <img src={images[index]} alt=""/>
+      </Link>
+      <div className="margin">
       <h5>{data.name}</h5>
       <p className="address">{data.address.address1}</p>
-      <span>{data.prices[0].price.amount.toLocaleString()}<text>원 / 하루</text></span>
+      <span>{data.prices[0].price.amount.toLocaleString()}<p>원 / 하루</p></span>
       <div className="personnel">{data.seatInfo.minPersonnelCount}인 ~ {data.seatInfo.maxPersonnelCount}인</div>
+      </div>
     </ProductContainer>
   )
 }

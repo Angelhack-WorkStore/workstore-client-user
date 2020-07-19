@@ -1,10 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import Footer from '../../containers/Footer/FooterContainer';
 
 const ReservationContainer = styled.main`
-  width:1200px;
-  margin:0 auto;
+  position:relative;
+  height:auto;
+  padding-bottom:165px;
+  width:100%;
+  min-height:100vh;
   .header {
     display:flex;
     justify-content:center;
@@ -18,6 +21,7 @@ const ReservationContainer = styled.main`
         height:1px;
         background:${({theme}) => theme.strokeColor};
         border:none;
+        margin-bottom:60px;
       }
 `
 
@@ -30,6 +34,7 @@ const ReservationTemeplate = ({children}:any) => {
       </div>
         <hr/>
       {children}
+      <Footer/>
     </ReservationContainer>
   )
 }

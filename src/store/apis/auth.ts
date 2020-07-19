@@ -68,7 +68,7 @@ export const getCurrentUserAPI = async():Promise<any> => {
   }
 
   return request({
-    url:API_BASE_URL + "/admin/accounts",
+    url:API_BASE_URL + "/accounts",
     method:'GET'
   })
 }
