@@ -43,13 +43,13 @@ function App() {
 function AppSwitch() {
   const {name} = useSelector((state:RootState) => state.authentication);
   const location = useLocation();
-  const background = (location as any).state || (location as any).hasOwnProperty('background');
+  const background = (location as any).state && (location as any).state.background;
   
   return (
     <>
       <Header/>
       <Switch location={background || location}>
-        <Route path="/" exact component={MainPage}></Route>
+        <Route exact path="/" component={MainPage}></Route>
         <Route path="/auth/login" component={LoginPage}>
           {name ? <Redirect to="/"/> : null}
         </Route>

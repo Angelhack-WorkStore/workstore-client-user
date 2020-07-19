@@ -110,7 +110,7 @@ const StoreMocalContainer = () => {
         <ContentContainer>
           <h3 className="head_top">{data.name}</h3>
           <p className="head_content">{data.description}</p>
-          <img src="/images/mainProduct2.png" alt=""/>
+          <img src="/images/mainpi.png" alt=""/>
           <h4>공간 소개</h4>
           <p className="body_content">{data.content}</p>
           <hr/>

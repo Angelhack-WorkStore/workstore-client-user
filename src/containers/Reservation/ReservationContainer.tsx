@@ -145,7 +145,7 @@ const ReservationContainer = () => {
     <Container>
       <ContentContainer>
         <div className="content_head">
-          <img src="/images/mainProduct2.png" alt=""/>
+          <img src="/images/mainpi.png" alt=""/>
           <div>
             <h3>{product.name}</h3>
             <p>{product.address.address1}{product.address.address2}</p>
@@ -213,7 +213,7 @@ const ReservationContainer = () => {
           <hr/>
           <div className="flex_box">
             <h5>결제 예정 금액</h5>
-            <span>{product.prices[0].price.amount.toLocaleString()}<p>원</p></span>
+            <span>{(product.prices[0].price.amount * Number(query.personnel)).toLocaleString()}<p>원</p></span>
           </div>
           <PrimaryButton width={'100%'} height={'48px'}>결제 하기</PrimaryButton>
         </div>
