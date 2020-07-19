@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef,useEffect} from 'react';
 import styled from 'styled-components';
 import Footer from '../../containers/Footer/FooterContainer';
 
@@ -26,9 +26,17 @@ const ReservationContainer = styled.main`
 `
 
 const ReservationTemeplate = ({children}:any) => {
+  const ContainerRef = useRef<any>()
 
+  useEffect(() => {
+    const top = document.getElementById('top_container') as HTMLDivElement;
+    ContainerRef.current.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  },[])
   return (
-    <ReservationContainer>
+    <ReservationContainer ref={ContainerRef}>
       <div className="header">
         <h2>예약하기</h2>
       </div>

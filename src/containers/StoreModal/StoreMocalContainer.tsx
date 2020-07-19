@@ -85,6 +85,9 @@ const StoreMocalContainer = () => {
     checkSvg2,checkSvg3,checkSvg4,checkSvg5,checkSvg6,checkSvg7,checkSvg8,checkSvg9,checkSvg10,checkSvg11,
     checkSvg12,checkSvg13,checkSvg14,checkSvg15,checkSvg16,checkSvg17,checkSvg18,checkSvg19,checkSvg20,checkSvg21
   ]
+
+  const images = ['/images/mainpi.png','/images/thumbnail1.png','/images/thumbnail2.png']
+  
   const history = useHistory();
   const dispatch = useDispatch();
   const handleAddClick = () => {
@@ -110,7 +113,7 @@ const StoreMocalContainer = () => {
         <ContentContainer>
           <h3 className="head_top">{data.name}</h3>
           <p className="head_content">{data.description}</p>
-          <img src="/images/mainpi.png" alt=""/>
+          <img src={images[data.id-1]} alt=""/>
           <h4>공간 소개</h4>
           <p className="body_content">{data.content}</p>
           <hr/>

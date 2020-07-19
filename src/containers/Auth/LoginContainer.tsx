@@ -39,7 +39,7 @@ const LoginContainer = () => {
 
   return (
     <S.AuthContainer>
-      <h2>호스트 로그인</h2>
+      <h2>사용자 로그인</h2>
       <S.SocialButton 
         bgColor="#FADE4B" 
         onClick={() => (window as any).location = KAKAO_HREF}

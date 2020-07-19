@@ -30,6 +30,7 @@ const ProductContainer = styled.div`
     color:18px;
     font-weight:bold;
     p {
+      display:inline-block;
       font-size:13px;
       margin-left:4px;
       color:${({theme}) => theme.grayColor7};
@@ -49,7 +50,7 @@ const Product = ({data,index}:any) => {
   const location = useLocation();
   
   if (index >=3) return null;
-
+  console.log(data.prices[0].price.amount)
   return (
     <ProductContainer>
       <Link to={{pathname:`/store/${data.id}`, state:{background:location, data}}}>
